@@ -27,8 +27,8 @@
     "author": "DoshaLabs",
     "hint": "A streak for sitting well, and a thumbs up or a middle finger for your session",
     "repo": "https://github.com/DoshaLabs/workshop-posture",
-    "commit": "3e625cc107de62f9a0e4d377f204358f30edaf2d",
-    "version": "0.1.0",
+    "commit": "71991ef801bb93d0a5fd485b5578e30474559e92",
+    "version": "0.2.0",
     "permissions": { "camera": true, "storage": true, "notify": true, "sessions": "write" },
     "category": "tools"
   }
