@@ -1,0 +1,4 @@
+core/
+core
+ci/out/
+node_modules/

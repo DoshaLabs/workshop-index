@@ -1,0 +1,59 @@
+# Checks every entry of tiles.json with workshop's own code (ci/check-index.mjs says how).
+# Runs on pull requests (a label added or removed runs it again, for "reviewed"), on main, by hand,
+# and once a week, so an entry that a newer workshop would refuse is seen.
+
+name: check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: The index
+        uses: actions/checkout@v4
+
+      - name: Workshop's main branch, for its rules
+        uses: actions/checkout@v4
+        with:
+          repository: DoshaLabs/workshop
+          ref: main
+          path: core
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: core/package-lock.json
+
+      # Only the packages are needed (semver, esbuild); no install script of workshop's runs.
+      - name: Workshop's packages
+        working-directory: core
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Bundle workshop's checks
+        run: core/node_modules/.bin/esbuild ci/core.ts --bundle --platform=node --format=esm --target=node22 --outfile=ci/out/core.mjs --log-level=warning
+
+      - name: The index before this pull request
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}"
+          git show FETCH_HEAD:tiles.json > "$RUNNER_TEMP/base.json" || echo '[]' > "$RUNNER_TEMP/base.json"
+
+      - name: Check every entry
+        env:
+          REVIEWED: ${{ github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'reviewed') }}
+        run: |
+          if [ -f "$RUNNER_TEMP/base.json" ]; then base="--base $RUNNER_TEMP/base.json"; fi
+          node ci/check-index.mjs tiles.json $base

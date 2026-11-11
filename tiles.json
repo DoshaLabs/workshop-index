@@ -1,0 +1,13 @@
+[
+  {
+    "id": "pomodoro",
+    "name": "Pomodoro",
+    "author": "DoshaLabs",
+    "hint": "Pomodoro timer: focus, short and long breaks",
+    "repo": "https://github.com/DoshaLabs/workshop-pomodoro",
+    "commit": "c9e06e7ddb599cf0c40ee287757f13b3c9b1ec3b",
+    "version": "0.1.1",
+    "permissions": { "storage": true, "notify": true },
+    "category": "tools"
+  }
+]
