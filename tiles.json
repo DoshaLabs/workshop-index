@@ -16,8 +16,8 @@
     "author": "DoshaLabs",
     "hint": "What Spotify is playing, its controls, your recent plays and playlists, and search",
     "repo": "https://github.com/DoshaLabs/workshop-spotify",
-    "commit": "221f5d6f7e8c709173199cbc3ff69b23da873e5d",
-    "version": "0.1.0",
+    "commit": "7dbe907a5e8a62cef6883460ee245c354917976c",
+    "version": "0.2.0",
     "permissions": { "music": true, "storage": true, "oauth": ["accounts.spotify.com"], "net": ["accounts.spotify.com", "api.spotify.com"] },
     "category": "media"
   }
