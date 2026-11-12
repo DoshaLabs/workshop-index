@@ -5,9 +5,9 @@
     "author": "DoshaLabs",
     "hint": "Pomodoro timer: focus, breaks, a daily goal and your history",
     "repo": "https://github.com/DoshaLabs/workshop-pomodoro",
-    "commit": "4937d0e8b52ca0a036b85b8ab43672ac882f6b22",
+    "commit": "752a1e8fd20c62d85da55918b5f71cdbe6d23067",
     "version": "0.2.0",
-    "permissions": { "storage": true, "notify": true, "sessions": "write", "door": { "ops": ["extend", "pause", "skip", "start", "status"] } },
+    "permissions": { "storage": true, "notify": true, "sessions": "write", "door": { "ops": ["extend", "pause", "skip", "start", "status"], "timeoutMs": 10000 } },
     "category": "tools"
   },
   {
