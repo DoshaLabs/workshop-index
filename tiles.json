@@ -3,11 +3,24 @@
     "id": "pomodoro",
     "name": "Pomodoro",
     "author": "DoshaLabs",
-    "hint": "Pomodoro timer: focus, short and long breaks",
+    "hint": "Pomodoro timer: focus, breaks, a daily goal and your history",
     "repo": "https://github.com/DoshaLabs/workshop-pomodoro",
-    "commit": "c9e06e7ddb599cf0c40ee287757f13b3c9b1ec3b",
-    "version": "0.1.1",
-    "permissions": { "storage": true, "notify": true },
+    "commit": "d0c5f5c7f17b4a50393306d6760835a1c54ae5a1",
+    "version": "0.2.0",
+    "permissions": {
+      "storage": true,
+      "notify": true,
+      "sessions": "write",
+      "door": {
+        "ops": [
+          "status",
+          "start",
+          "pause",
+          "skip",
+          "extend"
+        ]
+      }
+    },
     "category": "tools"
   },
   {
@@ -18,7 +31,17 @@
     "repo": "https://github.com/DoshaLabs/workshop-spotify",
     "commit": "02a5d23f0768fd471a46ec15fa4ddb178721a983",
     "version": "0.2.1",
-    "permissions": { "music": true, "storage": true, "oauth": ["accounts.spotify.com"], "net": ["accounts.spotify.com", "api.spotify.com"] },
+    "permissions": {
+      "music": true,
+      "storage": true,
+      "oauth": [
+        "accounts.spotify.com"
+      ],
+      "net": [
+        "accounts.spotify.com",
+        "api.spotify.com"
+      ]
+    },
     "category": "media"
   },
   {
@@ -29,7 +52,12 @@
     "repo": "https://github.com/DoshaLabs/workshop-posture",
     "commit": "71991ef801bb93d0a5fd485b5578e30474559e92",
     "version": "0.2.0",
-    "permissions": { "camera": true, "storage": true, "notify": true, "sessions": "write" },
+    "permissions": {
+      "camera": true,
+      "storage": true,
+      "notify": true,
+      "sessions": "write"
+    },
     "category": "tools"
   }
 ]
