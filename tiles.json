@@ -31,5 +31,16 @@
     "version": "0.2.0",
     "permissions": { "camera": true, "storage": true, "notify": true, "sessions": "write" },
     "category": "tools"
+  },
+  {
+    "id": "session-map",
+    "name": "Session map",
+    "author": "DoshaLabs",
+    "hint": "A live map of a session's work: files, shell, web, model, agents, hooks light up as they are used",
+    "repo": "https://github.com/DoshaLabs/workshop-session-map",
+    "commit": "b1737e885fc1dc1e2af834fd9c938c0de22efaab",
+    "version": "0.1.0",
+    "permissions": { "storage": true, "sessions": "read", "activity": true, "usage": true },
+    "category": "sessions"
   }
 ]
