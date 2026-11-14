@@ -49,9 +49,9 @@
     "author": "DoshaLabs",
     "hint": "Tiny ray-marched worlds a Claude session writes for you, to fly around",
     "repo": "https://github.com/DoshaLabs/workshop-demoscene",
-    "commit": "dfcdb3070e543078f797b950a2ed319e9cc36255",
-    "version": "0.1.0",
-    "permissions": { "storage": true, "overlay": true, "door": { "ops": ["get", "list", "load", "show", "snap", "status"], "timeoutMs": 15000 } },
+    "commit": "5c45111dfc90d94cf9aa1b607ad9cd5a2a350f58",
+    "version": "0.2.0",
+    "permissions": { "storage": true, "overlay": true, "sessions": "write", "door": { "ops": ["get", "guide", "list", "load", "show", "snap", "status"], "timeoutMs": 15000 } },
     "category": "fun"
   }
 ]
