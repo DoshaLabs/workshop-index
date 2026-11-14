@@ -42,5 +42,16 @@
     "version": "0.1.0",
     "permissions": { "storage": true, "sessions": "read", "activity": true, "usage": true },
     "category": "sessions"
+  },
+  {
+    "id": "demoscene",
+    "name": "Demoscene",
+    "author": "DoshaLabs",
+    "hint": "Tiny ray-marched worlds a Claude session writes for you, to fly around",
+    "repo": "https://github.com/DoshaLabs/workshop-demoscene",
+    "commit": "5c45111dfc90d94cf9aa1b607ad9cd5a2a350f58",
+    "version": "0.2.0",
+    "permissions": { "storage": true, "overlay": true, "sessions": "write", "door": { "ops": ["get", "guide", "list", "load", "show", "snap", "status"], "timeoutMs": 15000 } },
+    "category": "fun"
   }
 ]
